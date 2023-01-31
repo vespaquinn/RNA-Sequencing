@@ -8,6 +8,11 @@
 #SBATCH --error=/data/courses/rnaseq_course/lncRNAs/Project1/users/qcoxon/Scripts/3-Assembly/Errors/error_%j.e
 #SBATCH --partition=pall
 
+#---- Description ----
+# This script takes the GTF asssemblies generated in the 
+# previous step and merges them into one meta assembly
+#---------------------
+
 #load stringtie
 module load UHTS/Aligner/stringtie/1.3.3b
 

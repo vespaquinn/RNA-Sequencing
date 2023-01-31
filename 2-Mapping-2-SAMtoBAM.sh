@@ -9,7 +9,9 @@
 $#SBATCH --error=/data/courses/rnaseq_course/lncRNAs/Project1/users/qcoxon/Scripts/2-Mapping/Errors
 #SBATCH --partition=pall
 
+#---- Description ----
 # This script uses SAMTools to convert the .sam files to .bam files and sorts them
+#---------------------
 
 # Store the path to the course directories as variables to improve readability
 RefDir=/data/courses/rnaseq_course/lncRNAs/Project1/references
@@ -28,8 +30,8 @@ replicates=("Holo_1_1_L3" "Holo_1_2_L3" "Holo_1_5_L3" "Parent_P1_L3" "Parent_P2_
 samtools faidx ${RefDir}/GRCh38.genome.fa > GRCh38.genome.fai
 
 # Now use Samtools view to convert from SAM to BAM
-# -b to generate a BAM output
-# -t for a file which lists reference names and lengths
+   # -b to generate a BAM output
+   # -t for a file which lists reference names and lengths
 
 for i in {0..5};
 do samtools view -b -t GRCh38.genome.fai ${CourDir}/Results/2-Mapping/SAM_Files/${replicates[$i]}.sam > ${CourDir}/Results/2-Mapping/BAM_Files/${replicates[$i]}_unsorted.bam

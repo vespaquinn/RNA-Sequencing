@@ -8,6 +8,11 @@
 #SBATCH --error=/data/courses/rnaseq_course/lncRNAs/Project1/users/qcoxon/Scripts/3-Assembly/Errors/error_%j.e
 #SBATCH --partition=pall
 
+#---- Description ----
+# This script takes the human genome reference annotation and the BAM files generated previously
+# and uses stringtie to generate transcriptome assembly GTF files for each replicate 
+#---------------------
+
 #load stringtie
 module load UHTS/Aligner/stringtie/1.3.3b
 
