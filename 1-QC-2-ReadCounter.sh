@@ -7,16 +7,17 @@
 #SBATCH --output=/data/courses/rnaseq_course/lncRNAs/Project1/users/qcoxon/Scripts/1-QC/Output/out_%j.o
 #SBATCH --error=/data/courses/rnaseq_course/lncRNAs/Project1/users/qcoxon/Scripts/1-QC/Errors/error_%j.e
 
+#---- Description ----
 # This script takes .fastq.gz files and outputs a .txt file with the count of the number of reads of each
-
+#---------------------
  
 # Set type (holo, para, mero, parent)
 type="holo" 
 
-  # Make output text file, that can then be appended. 
+# Make output text file, that can then be appended. 
 echo "${type} reads:" > /data/courses/rnaseq_course/lncRNAs/Project1/users/qcoxon/Results/1-QC/${type}_reads.txt
 
-  # Move into the data directory
+# Move into the data directory
 cd /data/courses/rnaseq_course/lncRNAs/Project1/users/qcoxon/Data/${type}
 
   # Since the files are zipped, we use zcat to read them and | to pipe it into the next command which is "wc -l" 
